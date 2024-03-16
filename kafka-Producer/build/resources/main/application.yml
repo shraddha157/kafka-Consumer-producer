@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /v1/employee-producer
+  port: 8082
+
+spring:
+  datasource:
+    url=jdbc:h2:mem:testdb
+    driverClassName=org.h2.Driver
+    username=sa
+    password=
+  # Hibernate Properties
+  jpa:
+    database-platform=org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto=update
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #value-serializer: org.apache.kafka.common.serialization.KafkaAvroSerializer
+    properties:
+      schema.registry.url: http://localhost:8081

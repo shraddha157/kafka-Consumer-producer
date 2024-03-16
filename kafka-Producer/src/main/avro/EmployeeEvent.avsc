@@ -1,0 +1,14 @@
+{
+  "namespace": "com.avro",
+  "doc": "this schema represents the employee information",
+  "type": "record",
+  "name" : "EmployeeSchema",
+  "fields" : [
+  {"name": "id","type": "int"},
+  {"name": "name", "type": "string"},
+  {"name": "department","type": "string"},
+  {"name": "salary", "type": "float"},
+    {"name": "lastworkingday", "type": "long"},
+    {"name": "designation" , "type": "string"}
+  ]
+}
